@@ -13,11 +13,11 @@ import NftGlobalNotification from './views/Nft/components/NftGlobalNotification'
 // Only pool is included in the main bundle because of it's the most visited page'
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
-// const Lottery = lazy(() => import('./views/Lottery'))
-// const Pools = lazy(() => import('./views/Pools'))
-// const Ifos = lazy(() => import('./views/Ifos'))
+const Lottery = lazy(() => import('./views/Lottery'))
+const Pools = lazy(() => import('./views/Pools'))
+const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
-// const Nft = lazy(() => import('./views/Nft'))
+const Nft = lazy(() => import('./views/Nft'))
 
 // This config is required for number formating
 BigNumber.config({
@@ -42,36 +42,48 @@ const App: React.FC = () => {
       <Menu>
         <Suspense fallback={<PageLoader />}>
           <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/farms">
-              <Farms />
-            </Route>
-            <Route path="/nests">
-              <Farms tokenMode/>
-            </Route>
-            {/* <Route path="/pools"> */}
-            {/*  <Pools /> */}
-            {/* </Route> */}
-            {/* <Route path="/lottery"> */}
-            {/*  <Lottery /> */}
-            {/* </Route> */}
-            {/* <Route path="/ifo"> */}
-            {/*  <Ifos /> */}
-            {/* </Route> */}
-            {/* <Route path="/nft"> */}
-            {/*  <Nft /> */}
-            {/* </Route> */}
-            {/* Redirect */}
-            {/* <Route path="/staking"> */}
-            {/*  <Redirect to="/pools" /> */}
-            {/* </Route> */}
-            {/* <Route path="/syrup"> */}
-            {/*  <Redirect to="/pools" /> */}
-            {/* </Route> */}
-            {/* 404 */}
-            <Route component={NotFound} />
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/farms">
+            <Farms />
+          </Route>
+          <Route path="/pools">
+            <Pools />
+          </Route>
+          <Route path="/lottery">
+            <Lottery />
+          </Route>
+          <Route path="/ifo">
+            <Ifos />
+          </Route>
+          <Route path="/collectibles">
+            <Collectibles />
+          </Route>
+          <Route exact path="/teams">
+            <Teams />
+          </Route>
+          <Route path="/teams/:id">
+            <Team />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/competition">
+            <TradingCompetition />
+          </Route>
+          {/* Redirect */}
+          <Route path="/staking">
+            <Redirect to="/pools" />
+          </Route>
+          <Route path="/syrup">
+            <Redirect to="/pools" />
+          </Route>
+          <Route path="/nft">
+            <Redirect to="/collectibles" />
+          </Route>
+          {/* 404 */}
+          <Route component={NotFound} />
           </Switch>
         </Suspense>
       </Menu>
