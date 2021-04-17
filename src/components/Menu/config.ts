@@ -6,29 +6,24 @@ const config: MenuEntry[] = [
     icon: 'HomeIcon',
     href: '/',
   },
-  {
-    label: 'Trade',
-    icon: 'TradeIcon',
-    items: [
-      {
-        label: 'Exchange',
-        href: 'https://exchange.goosedefi.com/',
-      },
-      {
-        label: 'Liquidity',
-        href: 'https://exchange.goosedefi.com/#/pool',
-      },
-    ],
-  },
+//  {
+//    label: 'Trade',
+//    icon: 'TradeIcon',
+//    items: [
+//      {
+//        label: 'Exchange',
+//        href: 'https://exchange.goosedefi.com/',
+//      },
+//      {
+//        label: 'Liquidity',
+//        href: 'https://exchange.goosedefi.com/#/pool',
+//      },
+//    ],
+//  },
   {
     label: 'Farms',
     icon: 'FarmIcon',
     href: '/farms',
-  },
-  {
-    label: 'Nests',
-    icon: 'PoolIcon',
-    href: '/nests',
   },
   // {
   //   label: 'Pools',
@@ -67,24 +62,18 @@ const config: MenuEntry[] = [
       },
     ],
   },
+  /*
   {
     label: 'More',
     icon: 'MoreIcon',
     items: [
       {
-        label: 'Github',
-        href: 'https://github.com/goosedefi/',
-      },
-      {
         label: 'Docs',
         href: 'https://goosedefi.gitbook.io/goose-finance/',
       },
-      {
-        label: 'Blog',
-        href: 'https://goosefinance.medium.com/',
-      },
     ],
   },
+/*
   {
     label: 'Partnerships/IFO',
     icon: 'GooseIcon',
@@ -100,6 +89,7 @@ const config: MenuEntry[] = [
     icon: 'AuditIcon',
     href: 'https://certik.org/projects/goose-finance',
   },
+  */
 ]
 
 export default config
